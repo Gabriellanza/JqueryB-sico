@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+       <style>
+        
+           
+           
+      </style>
+      
+      
+      
+      
+  </head>
+  <body>
+  
+        
+        <form>
+            <div class="container">    
+          <div class="form-group">
+              
+                <div class="col-6">
+                    <label for="txtnome">Nome</label>  
+                    <input type="text" id="txtnome" class="form-control"/>
+              </div>
+                <div class="col-6">
+                    <label for="txtemail">E-mail</label>  
+                    <input type="email" id="txtemail" class="form-control"/>
+              </div>
+                <div class="col-6">
+                    <label for="txtsenha">Senha</label>  
+                    <input type="password" id="txtsenha" class="form-control"/>
+              </div>
+               <div class="col-6">
+                    <label for="txtconfsenha">Confirme sua Senha</label>  
+                    <input type="password" id="txtconfsenha" class="form-control"/>
+              </div>
+              <div id="feedbacksenha">asd</div>
+              <br/>
+              <button type="button" class="btn btn-dark" id="btnsalvar">Salvar</button>
+              
+            
+            
+    </div>
+   </div>
+</form>
+        
+        
+    
+      
+
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      <script> 
+            $(document).ready(function(){
+                $("#btnsalvar").click(function(){
+                    
+                    $("#txtnome").removeClass("is-invalid");
+                    $("#txtnome").removeClass("is-valid");
+                    $("#txtemail").removeClass("is-invalid");
+                    $("#txtemail").removeClass("is-valid");
+                    $("#txtsenha").removeClass("is-invalid");
+                    $("#txtsenha").removeClass("is-valid");
+                    $("#txtconfsenha").removeClass("is-invalid");
+                    $("#txtconfsenha").removeClass("is-valid");
+                    $("#feedbacksenha").removeClass("invalid-feedback");
+                    $("#feedbacksenha").removeClass("valid-feedback");
+                    $("#feedbacksenha").removeClass("is-invalid");
+                    $("#feedbacksenha").removeClass("is-valid");
+                    
+                    nome = $("#txtnome").val();
+                    email = $("#txemail").val();
+                    senha = $("#txtsenha").val();
+                    confsenha = $("#txtconfsenha").val();
+                    
+                    if (nome == ""){
+                        $("#txtnome").addClass("is-invalid");
+                        
+                        } else{
+                             $("#txtnome").addClass("is-valid");     
+                         }
+                    
+                    if (email == ""){
+                        $("#txtemail").addClass("is-invalid");
+                       
+                        } else{
+                             $("#txtemail").addClass("is-valid");     
+                         }
+                    
+                    if (senha == ""){
+                        $("#txtsenha").addClass("is-invalid");
+                        
+                        } else{
+                             $("#txtsenha").addClass("is-valid");     
+                         }
+                    
+                    if (confsenha == ""){
+                        $("#txtconfsenha").addClass("is-invalid");
+                        
+                        } else{
+                             $("#txtconfsenha").addClass("is-valid");     
+                         }
+                    
+                    if (senha == confsenha){
+                        $("#txtsenha").addClass("is-valid");
+                        $("#feedbacksenha").addClass("valid-feedback").text("Tudo Certo!!");
+                    } 
+                    else {
+                        $("#txtsenha").addClass("is-invalid");
+                        $("#feedbacksenha").addClass("invalid-feedback").text("Senhas Diferentes, Informe novamente!!");
+                    }
+                    
+                });
+            });
+          
+          
+          
+          
+       /* $("#div1").addClass("classe3");
+          $("#div1").removeClass("classe3");
+          $("#div1").hasClass("classe3"); */
+      </script>
+         
+  </body>
+</html>
