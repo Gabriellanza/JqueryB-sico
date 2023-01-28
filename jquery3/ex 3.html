@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Ex1 </title>
+      
+      
+      
+  </head>
+  <body>
+  <div class="container-fluid">
+          <div class="form-group">
+              <label for="txtvalor">Valor da Compra</label>
+              <input type="number" class="form-control"
+                     id="txtvalor"/>
+          </div>
+      
+      <div class="form-group">
+              <label for="txtprest">Quantidade de Prestações</label>
+              <input type="number" class="form-control"
+                     id="txtprest"/>
+          </div>
+      <div class="form-group col-4">
+                <span id="txtparcela"></span>
+                    
+              
+              </div>
+      <div class="form-group col-4">
+                <span id="txttotal"></span>
+                    
+              
+              </div>
+      
+      
+        
+      <button class="btn btn-primary" type="button" id="btn1" >Valor a Pagar</button>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      <script src="jquery.mask.js"></script>
+      
+      <script>
+          
+          $(document).ready(function(){
+              
+           
+              $("#btn1").click(function(){
+                
+                  var valor_compra,prestacao; 
+                    valor_compra = $("#txtvalor").val();
+                    prestacao = $("#txtprest").val();
+                   valor_compra = parseFloat(valor_compra);
+                   prestacao = parseFloat(prestacao);
+                  
+                  if (prestacao <= 4 ){
+                          parcela =  valor_compra / prestacao;
+                          
+                            $("#txtparcela").html("Parcela: "+ parcela.toFixed(2)); 
+                            $("#txttotal").html("Total: "+ valor_compra.toFixed(2)); 
+                        
+                      }
+                  if (prestacao == 5 ){
+                            juros = (valor_compra * 0.10) + valor_compra;
+                            parcela =  juros / prestacao;
+                            $("#txtparcela").html("Parcela: "+ parcela.toFixed(2)); 
+                            $("#txttotal").html("Total: "+ juros.toFixed(2)); 
+                        
+                      }
+                  if (prestacao == 6 ){
+                            juros = (valor_compra * 0.18) + valor_compra;
+                            parcela =  juros / prestacao;
+                            $("#txtparcela").html("Parcela: "+ parcela.toFixed(2)); 
+                            $("#txttotal").html("Total: "+ juros.toFixed(2)); 
+                        
+                      }
+                  if (prestacao == 7 ){
+                            juros = (valor_compra * 0.25) + valor_compra;
+                            parcela =  juros / prestacao;
+                            $("#txtparcela").html("Parcela: "+ parcela.toFixed(2)); 
+                            $("#txttotal").html("Total: "+ juros.toFixed(2)); 
+                        
+                      }
+                  if (prestacao == 8 ){
+                            juros = (valor_compra * 0.33) + valor_compra;
+                            parcela =  juros / prestacao;
+                            $("#txtparcela").html("Parcela: "+ parcela.toFixed(2)); 
+                            $("#txttotal").html("Total: "+ juros.toFixed(2)); 
+                        
+                      }
+                  
+                  
+                  
+              });
+             
+              
+          });
+          
+          
+      </script>
+
+         
+  </body>
+</html>
